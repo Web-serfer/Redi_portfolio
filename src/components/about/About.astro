@@ -51,7 +51,7 @@ const p = `Если вы ищете профессионального прог�
 <style>
   .about__container {
     display: grid;
-    grid-template-columns: 35% 50%;
+    grid-template-columns: 35% 50%;   
     gap: 15%;
   }
 
@@ -82,7 +82,7 @@ const p = `Если вы ищете профессионального прог�
 
   .about__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);    
     gap: 1.5rem;
   }
 
@@ -91,7 +91,10 @@ const p = `Если вы ищете профессионального прог�
     border: 1px solid transparent;
     border-radius: 1rem;
     padding: 2rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;     
     transition: var(--transition);
   }
 
