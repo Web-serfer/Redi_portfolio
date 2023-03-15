@@ -1,8 +1,9 @@
 ---
-import CTA from "./CTA.astro";
-import HeaderSocials from "./HeaderSocials.astro";
 import Redi from "../../assets/redi.webp";
 import { Icon } from "astro-icon";
+import CTA from "./CTA.astro";
+import HeaderSocials from "./HeaderSocials.astro";
+
 
 export interface Props {
   h3?: string;
@@ -37,12 +38,13 @@ const {
     </div>
 
     <a href="#contact" class="scroll__down">
+      Scroll Down 
       <Icon
         pack="mdi"
-        name="arrow-down-thin"
-        size={25}
+        name="arrow-down-bold"
+        size={18}
         className="scroll__down-arrow"
-      />
+      />     
     </a>
   </div>
 </header>
