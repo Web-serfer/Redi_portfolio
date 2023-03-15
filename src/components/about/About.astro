@@ -1,6 +1,9 @@
 ---
-import CODE from "../../assets/code.webp";
+import codeImg from "../../assets/code.webp";
+import dataAbout from './dataAbout.js'
 import { Icon } from "astro-icon";
+
+const p = `Если вы ищете профессионального программиста, который может быстро и качественно визуализировать Ваши идей, то вы попали по адресу !!! Я предлагаю качественное и профессиональное программирование для Bаших веб-проектов по доступным ценам.`;
 ---
 
 <section id="about">
@@ -10,49 +13,36 @@ import { Icon } from "astro-icon";
   <div class="container about__container">
     <div class="about__me">
       <div class="about__me-image">
-        <img src={CODE} alt="Java Script" />
+        <img src={ codeImg } alt="Java Script" />
       </div>
     </div>
 
     <div class="about__content">
       <div class="about__cards">
-        <article class="about__card">
-          <Icon
-            pack="dashicons"
-            name="awards"
-            size={28}
-            class="about__icon"
-          />         
-          <h4>Опыт</h4>
-          <small>3 года разработки</small>
-        </article>
-        <article class="about__card">
-          <Icon
-            pack="la"
-            name="users"
-            size={28}
-            class="about__icon"
-          /> 
-          <h4>Клиенты</h4>
-          <small>200+ клиентов</small>
-        </article>
-        <article class="about__card">
-          <Icon
-            pack="file-icons"
-            name="microsoft-project"
-            size={25}
-            class="about__icon"
-          /> 
-          <h4>Проекты</h4>
-          <small>80+ завершенных</small>
-        </article>
+        {
+          dataAbout.map(({ 
+            classCard, 
+            pack, 
+            name, 
+            size, 
+            classIcon, 
+            h4, 
+            small 
+          }) => (
+          <article class={classCard}>
+            <Icon
+              pack={pack}
+              name={name}
+              size={size}
+              class={classIcon}
+            />         
+            <h4>{h4}</h4>
+            <small>{small}</small>
+          </article>
+          ))
+        }        
       </div>
-      <p>
-        Если вы ищете профессионального программиста, который может быстро и
-        качественно визуализировать Ваши идей, то вы попали по адресу !!! Я
-        предлагаю качественное и профессиональное программирование для Bаших
-        веб-проектов по доступным ценам.
-      </p>
+      <p>{p}</p>
       <a href="#contact" class="btn btn-primary">Контакты</a>
     </div>
   </div>
