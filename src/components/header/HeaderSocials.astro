@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div class="header__socials">
+  <a href="https://linkedin.com" target="_blank">
+    <Icon pack="mdi" name="linkedin" />
+  </a>
+  <a href="https://github.com" target="_blank">
+    <Icon pack="mdi" name="github" />
+  </a>
+  <a href="https://dribbble.com" target="_blank">
+    <Icon pack="mdi" name="dribbble" />
+  </a>
+</div>
+
+<style>
+  .header__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .header__socials::after {
+    content: "";
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+  }
+</style>

@@ -1,0 +1,127 @@
+---
+import frontend from "./frontend.js";
+import backend from "./backend.js";
+import { Icon } from "astro-icon";
+---
+
+<section id="experience">
+  <h3>Стек навыков</h3>
+  <h2>Мой опыт</h2>
+  <div class="container experience__container">
+    <div class="experience__frontend">
+      <h3>Фронтенд Разработка</h3>
+      <div class="experience__content">
+        {
+          frontend.map(({ id, h4, small }) => (
+            <article class="experience__details">
+              <Icon
+                pack="mdi"
+                name="sticker-text"
+                size={25}
+                className="experience__details-icon"
+              />
+              <div>
+                <h4>{h4}</h4>
+                <small class="text-light">{small}</small>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+    <div class="experience__backend">
+      <h3>Бэкенд Разработка</h3>
+      <div class="experience__content">
+        {
+          backend.map(({ id, h4, small }) => (
+            <article class="experience__details">
+              <Icon
+                pack="mdi"
+                name="sticker-text"
+                size={25}
+                className="experience__details-icon"
+              />
+              <div>
+                <h4>{h4}</h4>
+                <small class="text-light">{small}</small>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .experience__container > div {
+    background: var(--color-bg-variant);
+    padding: 2.4rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+  }
+
+  .experience__container > div:hover {
+    background: transparent;
+    background-color: var(--color-primary-variant);
+    cursor: default;
+  }
+
+  .experience__container > div h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+  }
+
+  .experience__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
+  .experience__details {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .experience__details-icon {
+    margin-bottom: 6px;
+    color: var(--color-primary);
+  }
+
+  /* ============ (Medium Devices) ========== */
+  @media (width < 1024px) {
+    .experience__container {
+      grid-template-columns: 1fr;
+    }
+
+    .experience__container > div {
+      width: 80%;
+      padding: 2rem;
+      margin: 0 auto;
+    }
+
+    .experience__content {
+      padding: 1rem;
+    }
+  }
+  /* ============ (Small Devices) ========== */
+  @media (width < 600px) {
+    .experience__container {
+      gap: 1rem;
+    }
+
+    .experience__container > div {
+      width: 100%;
+      padding: 2rem 1rem;
+    }
+  }
+</style>
