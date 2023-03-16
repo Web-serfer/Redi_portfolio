@@ -21,14 +21,15 @@ const frontend = [
   },
   {
     id: 5,
-    h4: "Tailwind",
+    h4: "Svelte",
     small: "Отлично",
   },
   {
     id: 6,
-    h4: "Material UI",
+    h4: "Tailwind",
     small: "Отлично",
   },
+  
 ];
 
 export default frontend 
