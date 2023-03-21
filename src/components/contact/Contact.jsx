@@ -2,16 +2,19 @@ import React, { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./contact.css";
-import emailjs from "emailjs-com";
-
+import emailjs from "@emailjs/browser";
 
 const Contacts = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
+    // 1 - service id
+    // 2 - template id
+    // 3 - form current
+    // 4 - public key
+    await emailjs.sendForm(
       "service_t957u3m",
       "template_c4oy5vo",
       form.current,
@@ -42,7 +45,6 @@ const Contacts = () => {
         <div className="contact__options">
           <article className="contact__option">
             {/* <FaMobileAlt className="contact__option-icon" /> */}
-            <i class="bi bi-phone-vibrate"></i>
             <h4>Mobile</h4>
             <a href="tel:+79222538375" target="_blank">
               Позвонить Redi
