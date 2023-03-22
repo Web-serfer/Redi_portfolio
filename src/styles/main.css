@@ -129,7 +129,7 @@ img {
 }
 
 /* ============ MEDIA QUERIES(Small Devices) ========== */
-@media (widtth < 600px) {
+@media (width < 600px) {
   .container {
     width: var(--container-width-sm);
   }
